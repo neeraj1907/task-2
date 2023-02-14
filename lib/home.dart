@@ -1,6 +1,9 @@
+// import 'dart:ffi';
+
 import 'package:client_task_tracker_application/about.dart';
 import 'package:client_task_tracker_application/client_one.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter_custom_switch/flutter_custom_switch.dart';
 
 class Home extends StatefulWidget {
   final String value;
@@ -16,6 +19,8 @@ class _HomeState extends State<Home> {
   String cilentName = '';
   var clientNameController = TextEditingController();
   List<String> listOfClient = [];
+  // bool isSelected = false;
+
   String name = '';
   @override
   Widget build(BuildContext context) {
@@ -60,7 +65,7 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          ('Welcome '),
+                          ('Welcome ${widget.value}'),
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 20,
@@ -68,13 +73,6 @@ class _HomeState extends State<Home> {
                         ),
                         SizedBox(
                           height: 150,
-                        ),
-                        Text(
-                          widget.value,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),
@@ -114,15 +112,30 @@ class _HomeState extends State<Home> {
                                               (element) => element == name)),
                                     ));
                                   },
+
                                   shape: RoundedRectangleBorder(
                                     side: BorderSide(width: 2),
                                   ),
                                   // selected: true,
                                   selectedTileColor:
                                       Color.fromARGB(255, 116, 124, 123),
-                                  title: Text(
-                                    name,
-                                    style: TextStyle(color: Colors.black),
+                                  title: Row(
+                                    children: [
+                                      Text(
+                                        name,
+                                        style: TextStyle(color: Colors.black),
+                                      ),
+                                      // FlutterCustomSwitch(
+                                      //     value: isSelected,
+                                      //     activeColor: Colors.red,
+                                      //     onChanged: (value) {
+                                      //       print("value: $value");
+                                      //       setState(() {
+                                      //         isSelected = value;
+                                      //       });
+                                      //     })
+                                      // ToggleButtons(children: [], isSelected: isSelected)
+                                    ],
                                   ),
                                   leading: Icon(
                                     Icons.person,

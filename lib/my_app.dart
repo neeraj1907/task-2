@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:client_task_tracker_application/my_app.dart';
 
 import 'my_home.dart';
 
@@ -9,8 +8,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false, 
-        title: 'Login Page',
-        home: MyHome());
+        debugShowCheckedModeBanner: false, title: 'Login Page', home: MyHome());
   }
 }

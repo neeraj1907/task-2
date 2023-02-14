@@ -17,17 +17,14 @@ class _MyHomeState extends State<MyHome> {
   var passwordController = TextEditingController();
   List<String> value = [];
 
-  // void login() {
-  //   // ignore: unrelated_type_equality_checks
-  //   setState(() {
-  //     if (usernameController.text == username[0] &&
-  //         passwordController.text == password[0]) {
-  //       Navigator.of(context).push(MaterialPageRoute(
-  //         builder: (context) => Home(value: value),
-  //       ));
-  //     }
-  //   });
-  // }
+  void login() {
+    if (usernameController.text == '6264567150' &&
+        passwordController.text == '1234') {
+      Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => Home(value: usernameController.text),
+      ));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,10 +62,6 @@ class _MyHomeState extends State<MyHome> {
                   ),
                   width: 300,
                   height: 50,
-                  // decoration: BoxDecoration(
-                  //   border: Border.all(color: Colors.black),
-                  //   borderRadius: BorderRadius.all(Radius.circular(20)),
-                  // ),
                 ),
                 SizedBox(
                   height: 20,
@@ -77,7 +70,6 @@ class _MyHomeState extends State<MyHome> {
                   child: TextField(
                     cursorColor: Color.fromARGB(255, 26, 160, 156),
                     controller: passwordController,
-                    // style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                         filled: true,
                         fillColor: Colors.white,
@@ -94,9 +86,6 @@ class _MyHomeState extends State<MyHome> {
                                 20))), //Helped By Google for textfield decoration
                   ),
                   width: 300,
-                  // decoration: BoxDecoration(
-                  // border: Border.all(color: Colors.black),
-                  //     borderRadius: BorderRadius.all(Radius.circular(20))),
                 ),
                 SizedBox(
                   height: 40,
@@ -106,12 +95,12 @@ class _MyHomeState extends State<MyHome> {
                   children: [
                     ElevatedButton(
                         onPressed: () {
-                          value.add(usernameController.text);
-                          // login();
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Home(
-                                    value: value[0],
-                                  )));
+                          // value.add(usernameController.text);
+                          login();
+                          // Navigator.of(context).push(MaterialPageRoute(
+                          //     builder: (context) => Home(
+                          //           value: (usernameController.text),
+                          //         )));
                         },
                         child: Text(
                           'Log In',

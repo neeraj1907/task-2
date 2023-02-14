@@ -2,11 +2,12 @@ import 'package:client_task_tracker_application/client_worksheet.dart';
 import 'package:flutter/material.dart';
 
 class ClientOne extends StatefulWidget {
-  final String clientName;
+  final String clientName; // Didn't understood
   const ClientOne({
     Key? key,
     required this.clientName,
   }) : super(key: key);
+  
   @override
   State<ClientOne> createState() => _ClientOneState();
 }
@@ -40,7 +41,7 @@ class _ClientOneState extends State<ClientOne> {
             IconButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => ClientWorksheet()));
+                      builder: (context) => ClientWorksheet(clientName: requirnmentController.text,)));
                 },
                 icon: Icon(Icons.person_outline_outlined))
           ],

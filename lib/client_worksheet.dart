@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ClientWorksheet extends StatelessWidget {
+  final String clientName; // Didn't understood
+  const ClientWorksheet({
+    Key? key,
+    required this.clientName,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +20,7 @@ class ClientWorksheet extends StatelessWidget {
                     Navigator.pop(context);
                   },
                   icon: Icon(Icons.arrow_back)),
-              Text('Profile'),
+              Text('Your Worksheet'),
             ],
           ),
           actions: [],
@@ -28,7 +33,7 @@ class ClientWorksheet extends StatelessWidget {
                   height: 140,
                 ),
                 Text(
-                  'Neeraj',
+                  '${clientName}',
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
